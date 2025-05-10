@@ -15,12 +15,22 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        return View();
+
+        List<PersonModel> people = new List<PersonModel>();
+        people.Add(new PersonModel { id = 1, name = "John" });
+        people.Add(new PersonModel { id = 2, name = "Jane" });
+        people.Add(new PersonModel { id = 3, name = "Doe" });
+        people.Add(new PersonModel { id = 4, name = "Smith" });
+        people.Add(new PersonModel { id = 5, name = "Emily" });
+
+        return View(people);
     }
 
     public IActionResult Privacy()
     {
-        return View();
+        var info = new InformationModel { Code = "123", Description = "Description", Name = "Name"};
+
+        return View(info);
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

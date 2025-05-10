@@ -1,6 +1,36 @@
-﻿@{
+﻿@Model Project.Models.InformationModel
+
+@{
     ViewData["Title"] = "Privacy Policy";
 }
 <h1>@ViewData["Title"]</h1>
 
 <p>Use this page to detail your site's privacy policy.</p>
+@{
+    if (Model != null)
+    {
+        <div class="row">
+            <div class="col-sm-6">
+                <p>@Model.Name</p>
+            </div>
+            <div class="col-sm-6">
+                <p>@Model.Code</p>
+            </div>
+
+        </div>
+    }
+    else
+    {
+        <p>No information</p>
+    }
+}
+@{
+    if (DateTime.Now.Minute > 13)
+    {
+        <p>True</p>
+    }
+    else
+    {
+        <p>Else</p>
+    }
+}
