@@ -15,7 +15,14 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        return View();
+        List<PersonModel> people = new List<PersonModel>
+        {
+            new PersonModel { id = 1, name = "John Doe" },
+            new PersonModel { id = 2, name = "Jane Smith" },
+            new PersonModel { id = 3, name = "Sam Brown" }
+        };
+
+        return View(people);
     }
 
     public IActionResult Privacy()
